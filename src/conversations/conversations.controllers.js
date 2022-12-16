@@ -27,16 +27,11 @@ const findAllConversations = async (userId) => {
 }
 
 const createConversation = async (obj) => {
-    console.log(obj.title)
-    console.log(obj.userId)
-    console.log(obj.initParticipants)
-    console.log(obj.imageUrl)
     const data = await Conversations.create({
         id: uuid.v4(),
         title: obj.title,
         userId : obj.userId,
         imageUrl: obj.imageUrl,
-        // initParticipants: obj.initParticipants
         initParticipants: sequelize.literal(`'${obj.initParticipants}'`)
     })
     // await Participants.create({
@@ -55,3 +50,5 @@ module.exports = {
     findAllConversations,
     createConversation
 }
+
+

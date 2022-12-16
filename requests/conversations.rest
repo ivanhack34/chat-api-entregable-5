@@ -7,15 +7,17 @@ GET {{rootRoute}}
 Authorization: JWT {{token}}
 
 
-# @name createConversation
+# @name createNewConversation
 ### Crear una conversacion - AUTHENTICATION REQUIRED -
 POST {{rootRoute}}
+Content-Type: application/json
 Authorization: JWT {{token}}
 
 {
-    "title" : "conversacion Elena G - Maria Vega", 
-    "initParticipants" : "{219c5876-9b9b-4df0-8fa0-2ca94d03d1e5}" 
-    }
+  "title": "Melisa Monica y Pedro",
+  "initParticipants": "{fb154aeb-aca8-4a04-ab96-7d7a4e73e944, ae55a7ef-0f33-4726-b3d8-da9458e55896}",
+  "imageUrl": "example/url"
+}
 
 
 
