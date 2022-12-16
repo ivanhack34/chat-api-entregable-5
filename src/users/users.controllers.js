@@ -13,12 +13,12 @@ const findAllUsers = async () => {
         where: {
             status: 'active'
         },
-        include:[{
-            model: Participants,
-            include: [{
-                model: Conversations
-            }]
-        }]
+        // include:[{
+        //     model: Participants,
+        //     include: [{
+        //         model: Conversations
+        //     }]
+        // }]
     })
     return data
 }
@@ -29,7 +29,8 @@ const findUserById = async (id) => {
             exclude: ['password', 'createdAt', 'updatedAt']
         },
         where: {
-            id: id
+            id: id,
+            status: 'active'
         }
     })
     return data
@@ -38,7 +39,8 @@ const findUserById = async (id) => {
 const findUserByEmail = async (email) => {
     const data = await Users.findOne({
         where: {
-            email: email
+            email: email,
+            status: 'active'
         }
     })
     return data
@@ -51,7 +53,7 @@ const createUser = async (obj) => {
         lastName: obj.lastName,
         email: obj.email,
         password: hashPassword(obj.password),
-        profImg: obj.profileImage,
+        profImage: obj.profImg,
         phone: obj.phone
     })
     return data

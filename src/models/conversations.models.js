@@ -12,9 +12,6 @@ const Conversations = db.define('conversations', {
         type: DataTypes.STRING(30),
         allowNull: false
     },
-    imageUrl: {
-        type: DataTypes.STRING
-    },
     userId: {
         type: DataTypes.UUID,
         allowNull: false,
@@ -22,7 +19,14 @@ const Conversations = db.define('conversations', {
             key: 'id',
             model: Users
         }
-    }
+    },
+    initParticipants:{
+        type: DataTypes.ARRAY(DataTypes.UUID),
+        allowNull: false
+    },
+    imageUrl: {
+        type: DataTypes.STRING
+    },
 })
 
 module.exports = Conversations

@@ -1,7 +1,8 @@
 const conversationControllers = require('./conversations.controllers')
 
 const getAllConversations = (req, res) => {
-    postControllers.findAllPosts()
+    
+    conversationControllers.findAllConversations(req.user.id)
         .then((data) => {
             res.status(200).json(data)
         })
@@ -11,9 +12,10 @@ const getAllConversations = (req, res) => {
 }
 
 const postConversation = (req, res) => {
-    const {title, imageUrl, participantId} = req.body
+    const {title, initParticipants, imageUrl} = req.body
+    console.log(req.body)
     const userId = req.user.id
-    conversationControllers.createConversation({title, imageUrl, participantId, userId})
+    conversationControllers.createConversation({title,  userId, initParticipants, imageUrl})
     .then((data)=>{
         res.status(201).json(data)
     })
@@ -25,5 +27,6 @@ const postConversation = (req, res) => {
 }
 
 module.exports = {
-    postConversation
+    postConversation,
+    getAllConversations
 }

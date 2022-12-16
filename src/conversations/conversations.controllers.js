@@ -1,8 +1,12 @@
+const uuid = require('uuid')
+const sequelize = require('sequelize')
+
 const Conversations = require('../models/conversations.models')
-const Participants = require('../models/participants.models')
+// const Participants = require('../models/participants.models')
 const Users = require('../models/users.models')
 
-const findAllConversations = async () => {
+
+const findAllConversations = async (userId) => {
     const data = await Conversations.findAll({
         attributes: {
             exclude: ['userId']
@@ -15,24 +19,34 @@ const findAllConversations = async () => {
                 }
             }
         ],
+        where:{
+            userId
+        }
     })
     return data
 }
 
 const createConversation = async (obj) => {
+    console.log(obj.title)
+    console.log(obj.userId)
+    console.log(obj.initParticipants)
+    console.log(obj.imageUrl)
     const data = await Conversations.create({
-        userId : obj.userId,
+        id: uuid.v4(),
         title: obj.title,
-        imageUrl: obj.imageUrl
+        userId : obj.userId,
+        imageUrl: obj.imageUrl,
+        // initParticipants: obj.initParticipants
+        initParticipants: sequelize.literal(`'${obj.initParticipants}'`)
     })
-    await Participants.create({
-        conversationId: data.id,
-        userId: obj.UserId
-    })
-    await Participants.create({
-        conversationId: data.id,
-        userId: obj.participantId
-    })
+    // await Participants.create({
+    //     conversationId: data.id,
+    //     userId: obj.UserId
+    // })
+    // await Participants.create({
+    //     conversationId: data.id,
+    //     userId: obj.participantId
+    // })
     return data
 }
 
