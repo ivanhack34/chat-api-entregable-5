@@ -26,6 +26,8 @@ const findAllConversations = async (userId) => {
     return data
 }
 
+
+
 const createConversation = async (obj) => {
     const data = await Conversations.create({
         id: uuid.v4(),
@@ -44,6 +46,8 @@ const createConversation = async (obj) => {
     // })
     return data
 }
+
+//Se necesita un patch y un delete
 
 
 module.exports = {
