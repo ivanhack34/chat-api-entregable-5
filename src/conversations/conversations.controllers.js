@@ -26,6 +26,8 @@ const findAllConversations = async (userId) => {
     return data
 }
 
+
+
 const createConversation = async (obj) => {
     console.log(obj.title)
     console.log(obj.userId)
@@ -50,8 +52,11 @@ const createConversation = async (obj) => {
     return data
 }
 
+//Se necesita un patch y un delete
+
 
 module.exports = {
     findAllConversations,
     createConversation
+
 }
