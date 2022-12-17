@@ -30,10 +30,12 @@ const initModels = () => {
 
 const initTrigger = () => {
     
+    // Se ejecuta una sola vez, si usas nodemon debes comentar esta funcion en app.js
     return bd.query(
         `create or replace function init_Participants() returns trigger as
         $$
         begin 
+            insert into participants values(uuid_generate_v4(), NEW."userId", new."id", current_date, current_date);
         for i in array_lower(NEW."initParticipants",1)..array_upper(NEW."initParticipants",1) 
             loop 
                 insert into participants values(uuid_generate_v4(), NEW."initParticipants"[i], new."id", current_date, current_date);
@@ -43,7 +45,6 @@ const initTrigger = () => {
         end
         $$
         language 'plpgsql' volatile;
-
         create trigger TR_init_participants after insert on conversations for each row
         execute procedure init_Participants();
 

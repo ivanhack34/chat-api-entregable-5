@@ -9,6 +9,7 @@ GET {{rootRoute}}
 ### Consultar un usuario por su id
 GET {{rootRoute}}/3eb05e5d-1d2c-4120-84da-6ef25d651b9a
 
+
 # @name createUser
 ### Crea un nuevo usuario
 POST {{rootRoute}}
@@ -16,14 +17,14 @@ Content-Type: application/json
 
 {
     // Body request example
-    "firstName": "Jose",
-    "lastName": "Delgado",
-    "email": "josedelgado@example.com",
+    "firstName": "Mauricio",
+    "lastName": "contreras",
+    "email": "mauro_cons4234@example.com",
     "password": "123",
     "profImg": "https://www.thispersondoesnotexist.com",
     //"profImg": "https://www.thiswaifudoesnotexist.net/example-3442.jpg",
     "phone": "+9999999999"
-  }
+}
 
 
 # @name login
@@ -81,7 +82,7 @@ Authorization: JWT {{token}}
     "phone": ""
  }
 
-### eliminar cualquier usuario con su id
+### eliminar cualquier usuario con su id - REQUIERE SER ADMIN -
 DELETE {{rootRoute}}/userId
 Authorization: JWT {{token}}
 

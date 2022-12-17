@@ -29,7 +29,7 @@ db.sync()
 
 //? Initialize my models relations
 initModels()
-//initTrigger()
+// initTrigger()
 
 //? Routes v1
 app.get('/', (req, res) => {
