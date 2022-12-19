@@ -2,7 +2,7 @@ const Messages = require('../models/messages.models')
 const uuid = require('uuid')
 
 
-const findAllMessageByConversationId = async (conversationId) => {
+const findAllMessageByConversationId = async (userId, conversationId) => {
     const data = await Messages.findAll({
         where:{
             conversationId

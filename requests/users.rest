@@ -33,12 +33,12 @@ POST http://localhost:9000/api/v1/auth/login
 Content-Type: application/json
 
 {
-    "email": "vivas_melisa@example.com",
+    "email": "mauro_cons4234@example.com",
     "password": "123"
   }
 
 ### Store example token in variable 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNlYjA1ZTVkLTFkMmMtNDEyMC04NGRhLTZlZjI1ZDY1MWI5YSIsImVtYWlsIjoidml2YXNfbWVsaXNhQGV4YW1wbGUuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY3MTE1NDI3MH0.WyzHgcmmPWZg-1u-aipMTk1lem77z0Nh3IjCtfS7mk4
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJjMTFlMjAyLWRkMGQtNGJiMC04MDVjLWM3MDI3MmY0NjE4ZCIsImVtYWlsIjoibWF1cm9fY29uczQyMzRAZXhhbXBsZS5jb20iLCJyb2xlIjoibm9ybWFsIiwiaWF0IjoxNjcxNDY5MjM1fQ.4KnRrbBjDHhpBJupbgTOlk7SXsJ-OeN26FeVzgNM6t4
 
 
 # @name queryMyUser

@@ -1,5 +1,5 @@
 @rootRoute = http://localhost:9000/api/v1/conversations
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNlYjA1ZTVkLTFkMmMtNDEyMC04NGRhLTZlZjI1ZDY1MWI5YSIsImVtYWlsIjoidml2YXNfbWVsaXNhQGV4YW1wbGUuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY3MTE1NDI3MH0.WyzHgcmmPWZg-1u-aipMTk1lem77z0Nh3IjCtfS7mk4
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJjMTFlMjAyLWRkMGQtNGJiMC04MDVjLWM3MDI3MmY0NjE4ZCIsImVtYWlsIjoibWF1cm9fY29uczQyMzRAZXhhbXBsZS5jb20iLCJyb2xlIjoibm9ybWFsIiwiaWF0IjoxNjcxNDY5MjM1fQ.4KnRrbBjDHhpBJupbgTOlk7SXsJ-OeN26FeVzgNM6t4
 
 # @name getAllConversations
 ### Mostrar conversaciones del usuario loggeado - AUTHENTICATION REQUIRED -
@@ -25,7 +25,7 @@ Authorization: JWT {{token}}
 
 
 # Store ID Conversation example
-@conversation_id = 4931c28e-efb9-48f2-860b-d916e536850b
+@conversation_id = 7d77852f-2d80-4c38-993a-d4cd82b778a6
 
 
 
@@ -63,7 +63,7 @@ Content-Type: application/json
 Authorization: JWT {{token}}
 
 {
-  "message" : "Tengo un error al crear un nueva conversacion"
+  "message" : "Te puedo ayudar a solucionarlo"
 }
 
 
@@ -75,7 +75,7 @@ Authorization: JWT {{token}}
 
 
 # Store message ID example
-@message_id = ab1985aa-c06e-44ee-96cb-00f8ea2a2fb7
+@message_id = 9fe6b6a1-5212-49c7-a8ca-2ce200703dfd
 
 
 # @name getMessageById

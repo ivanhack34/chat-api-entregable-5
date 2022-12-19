@@ -2,8 +2,9 @@ const messageControllers = require('./messages.controllers')
 
 
 const getAllMessageByConversation = (req, res) => {
+    const userId = req.user.id
     const conversation_Id = req.params.conversation_id
-    messageControllers.findAllMessageByConversationId(conversation_Id)
+    messageControllers.findAllMessageByConversationId(userId, conversation_Id)
         .then(data=>{
             res.status(200).json(data)
         })

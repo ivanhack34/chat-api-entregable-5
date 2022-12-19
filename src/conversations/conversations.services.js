@@ -32,7 +32,12 @@ const postConversation = (req, res) => {
     })
     .catch((err) => {
       res.status(400).json({
-        message: err.message
+        message: err.message,
+        fields:{
+          title : "example conversation title *",
+          initParticipants : "['0731a85f-0d7e-41c4-a8f6-37b07080ebc0', 'ae55a7ef-0f33-4726-b3d8-da9458e55896']",
+          imageUrl : "example/url"
+        }
       })
     })
 };
@@ -50,7 +55,7 @@ const patchConversation = (req, res) => {
           });
       }
     })
-    .catch((error) => res.status(400).json({ message: error.message }));
+    .catch((error) => res.status(400).json({ message: error.message, fields:{title:"string(max 30)*",imageUrl:"string"} }));
 };
 
 const deleteConversation = (req, res) => {
